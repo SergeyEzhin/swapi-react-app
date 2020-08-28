@@ -1,0 +1,16 @@
+.form-search 
+{
+    align-items: flex-end;
+    justify-content: space-between;
+    &__field 
+    {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        p 
+        {
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+    }
+}

@@ -1,0 +1,17 @@
+.title 
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 20px;
+    flex-direction: column;
+    h1, h2
+    {
+        font-weight: bold;
+    }
+}
+
+.forms, .result-compare, .info 
+{
+    margin-top: 50px;
+}
