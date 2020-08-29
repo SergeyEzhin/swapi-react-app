@@ -6,7 +6,7 @@ export const FormSearch = () =>
     return (
         <form className="form-inline form-search">
             <div className="form-search__field">
-                <p>Compare with:</p>
+                {/* <p>Compare with:</p> */}
                 <select className="form-control">
                     <option value="No value">No value</option>
                     <option>1</option>
