@@ -15,7 +15,8 @@ class MainScreen extends React.Component
 
     render()
     {
-        if(this.props.data)
+        const {data} = this.props;
+        if(data)
         {
             return (
                 <div className="container">
@@ -29,10 +30,10 @@ class MainScreen extends React.Component
                     <div className="forms">
                         <div className="row">
                             <div className="col-md-6">
-                                <FormSearch />
+                                <FormSearch data={data}/>
                             </div>
                             <div className="col-md-6">
-                                <FormSearch />
+                                <FormSearch data={data}/>
                             </div>
                         </div>
                     </div>

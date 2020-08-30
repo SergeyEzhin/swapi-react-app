@@ -4,27 +4,27 @@ export const fetchData = () =>
 {
     return dispatch => 
     {
-        /* https://swapi.dev/api/films/2/*/
-        return fetch('http://swapi.dev/api/starships/13/', {headers: {'Content-Type': 'application/json'}})
+        return fetch('https://swapi.dev/api/films/2/')
         .then(response => 
         {
           return response.json();
         })
         .then(data =>
         {
-            console.log(data);
-            // const starshipsPaths = data.starships;
-            // const starships = starshipsPaths.map(async (starship) => {
-            //     return await fetch(starship, {headers: {'Content-Type': 'application/json'}})
-            //     .then(response => {
-            //         return response.json();
-            //     })
-            //     .then(data => {
-            //         return data;
-            //     });
-            // });
+            // console.log(data);
+            const starshipsPaths = data.starships;
+            let starships = [];
+            starshipsPaths.forEach(async starship => {
+                return await fetch(starship)
+                .then(response => {
+                    return response.json();
+                })
+                .then(data => {
+                    starships.push(data);
+                });
+            });
 
-            dispatch({type: FETCH_DATA, payload: data});
+            dispatch({type: FETCH_DATA, payload: starships});
         });
     }
 }

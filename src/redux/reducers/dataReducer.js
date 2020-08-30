@@ -1,7 +1,7 @@
 import {FETCH_DATA} from '../types';
 
 const initialState = {
-    data: []
+    data: ''
 };
 
 export const dataReducer = (state = initialState, action) => {
