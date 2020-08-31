@@ -1,4 +1,4 @@
-import {FETCH_DATA} from './types'
+import {FETCH_DATA, CHOOSE_SHIP} from './types'
 
 export const fetchData = () => 
 {
@@ -11,20 +11,28 @@ export const fetchData = () =>
         })
         .then(data =>
         {
-            // console.log(data);
-            const starshipsPaths = data.starships;
-            let starships = [];
-            starshipsPaths.forEach(async starship => {
-                return await fetch(starship)
+            let starshipsPaths = data.starships;
+            let arrayPromises = starshipsPaths.map(starship => {
+                return fetch(starship)
                 .then(response => {
                     return response.json();
                 })
                 .then(data => {
-                    starships.push(data);
+                    return data;
                 });
             });
 
-            dispatch({type: FETCH_DATA, payload: starships});
+            Promise.all(arrayPromises).then(result => {
+                console.log(result);
+                dispatch({type: FETCH_DATA, payload: result});
+            });
         });
+    }
+}
+
+export const chooseShip = (ship) => {
+    return {
+        type: CHOOSE_SHIP,
+        payload: ship
     }
 }

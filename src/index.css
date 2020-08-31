@@ -1,21 +1,57 @@
 @import '~bootstrap/dist/css/bootstrap.min.css';
-@import url(https://fonts.googleapis.com/css?family=Droid+Sans:400,700);
 
-/* @font-face { 
-  font-family: "Star Wars";
-  src: url(./fonts/STARWARS.TTF) format("truetype");
-} */
+@font-face 
+{
+  font-family: 'Proxima Nova Regular';
+  src: url('../src/fonts/ProximaNova-Regular.eot'),
+      url('../src/fonts/ProximaNova-Regular.woff') format('woff'),
+      url('../src/fonts/ProximaNova-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face 
+{
+  font-family: 'Proxima Nova Bold';
+  src: url('../src/fonts/ProximaNova-Bold.eot'),
+      url('../src/fonts/ProximaNova-Bold.woff') format('woff'),
+      url('../src/fonts/ProximaNova-Bold.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face 
+{
+  font-family: 'Star Wars';
+  src: url('../src/fonts/STARWARS.woff') format('woff'); 
+  font-weight: normal; 
+  font-style: normal;
+}
+
+.container 
+{
+  max-width: 1230px;
+}
+
+.container-inner 
+{
+  width: 690px;
+}
 
 #root 
 {
-    min-height: 100vh;
-    height: auto;
+  height: auto;
 }
 
-body, p 
+body
 {
-  font-family: "Droid Sans", arial, verdana, sans-serif;
   margin: 0;
-  background: #eee;
+  padding: 0;
+  background-color: #1a1a1a;
+}
+
+p, h1, h2, h3, h3, h5, h6
+{
+  margin: 0;
 }
 

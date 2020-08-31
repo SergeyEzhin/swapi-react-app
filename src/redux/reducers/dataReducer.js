@@ -1,7 +1,9 @@
-import {FETCH_DATA} from '../types';
+import {FETCH_DATA, CHOOSE_SHIP} from '../types';
 
 const initialState = {
-    data: ''
+    data: '',
+    selectedShips: [],
+    keysSelects: ['0', '1']
 };
 
 export const dataReducer = (state = initialState, action) => {
@@ -9,6 +11,11 @@ export const dataReducer = (state = initialState, action) => {
     {
         case FETCH_DATA:
             return {...state, data: action.payload}
+        case CHOOSE_SHIP:
+            return {...state, selectedShips: [
+                ...state.selectedShips,
+                action.payload
+            ]}
         default:
             return state
     }

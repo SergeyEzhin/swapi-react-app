@@ -1,17 +1,52 @@
 .title 
 {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding-top: 20px;
-    flex-direction: column;
-    h1, h2
+    margin-top: 70px;
+    h1 
     {
-        font-weight: bold;
+        font-family: Star Wars;
+        font-size: 80px;
+        font-weight: normal;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: normal;
+        letter-spacing: normal;
+        color: #ffffff;
+    }
+    &__image 
+    {
+        img 
+        {
+            max-width: 100%;
+            height: auto;
+        }
     }
 }
 
-.forms, .result-compare, .info 
+.subtitle 
 {
-    margin-top: 40px;
+    display: flex;
+    align-items: center;
+    margin-top: 50px;
+    p 
+    {
+        margin-left: 20px;
+        font-family: Proxima Nova Bold;
+        font-size: 24px;
+        font-stretch: normal;
+        font-style: normal;
+        letter-spacing: normal;
+        color: #ffffff;
+        line-height: 1;
+    }
+}
+
+.selects 
+{
+    margin-top: 70px;
+}
+
+
+.result-compare 
+{
+    margin-top: 94px;
 }

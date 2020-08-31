@@ -15,37 +15,40 @@ class MainScreen extends React.Component
 
     render()
     {
-        const {data} = this.props;
-        if(data)
+        let {data, keysSelects} = this.props;
+
+        if(data.length)
         {
+            console.log(data);
             return (
                 <div className="container">
                     <div className="title">
                         <h1>STAR WARS</h1>
-                        <h2>Starship comparisons</h2>
-                    </div>
-                    <div className="info">
-                        <h3>Select ships to compare</h3>
-                    </div>
-                    <div className="forms">
-                        <div className="row">
-                            <div className="col-md-6">
-                                <FormSearch data={data}/>
-                            </div>
-                            <div className="col-md-6">
-                                <FormSearch data={data}/>
-                            </div>
+                        <div className="title__image">
+                            <img src={process.env.PUBLIC_URL + '/img/img_line.svg'} alt=""/>
                         </div>
                     </div>
-                    <div className="result-compare">
-                        <div className="row">
-                            <div className="col-md-6">
-                                <TableResult />
-                            </div>
-                            <div className="col-md-6">
-                                <TableResult />
-                            </div>
+                    <div className="subtitle">
+                        <div className="subtitle__image">
+                            <img src={process.env.PUBLIC_URL + '/img/icon_ship.svg'} alt=""/>
                         </div>
+                        <p>Starship <br />comparisons</p>
+                    </div>
+                    <div className="selects container-inner">
+                        <div className="row">
+                        {
+                            keysSelects.map((elem, index) => {
+                                return (
+                                    <div className="col-md-6" key={index}>
+                                        <FormSearch data={data} elem={elem} />
+                                    </div>
+                                )
+                            })
+                        }
+                        </div>
+                    </div>
+                    <div className="result-compare container-inner">
+                       
                     </div>
                 </div>
             )
@@ -62,7 +65,8 @@ const mapDispatchToProps = dispatch => ({
 });
 
 const mapStateToProps = state => ({
-   data: state.data.data
+   data: state.data.data,
+   keysSelects: state.data.keysSelects
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(MainScreen);
