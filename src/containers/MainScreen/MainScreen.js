@@ -48,7 +48,7 @@ class MainScreen extends React.Component
                         </div>
                     </div>
                     <div className="result-compare container-inner">
-                       
+                        <TableResult />
                     </div>
                 </div>
             )

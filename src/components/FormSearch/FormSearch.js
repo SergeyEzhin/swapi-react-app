@@ -11,8 +11,6 @@ export const FormSearch = ({data, elem}) =>
     const changeHandler = (e) =>
     {
         let newValue = e.target.value;
-        // console.log(e.target);
-        // console.log(newValue);
         console.log(nameRef);
 
         if(newValue === 'No value') return;

@@ -1,0 +1,54 @@
+.table-result 
+{
+    margin-top: -30px;
+    &-row 
+    {
+        margin-top: 30px;
+        // border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        padding-bottom: 30px;
+        position: relative;
+        width: 100%;
+        justify-content: space-between;
+    }
+    &-row:after
+    {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 15px;
+        height: 1px;
+        width: calc(100% - 30px);
+        background: rgba(255, 255, 255, 0.1);
+    }
+    &-parameters 
+    {
+        margin-bottom: 15px;
+        p 
+        {
+            font-family: Proxima Nova Regular;
+            font-size: 16px;
+            font-weight: normal;
+            font-stretch: normal;
+            font-style: normal;
+            line-height: 1;
+            letter-spacing: 0.32px;
+            color: #8c8c8c;
+        }
+    }
+    &-values 
+    {
+        width: 330px;
+        max-width: 330px;
+        p 
+        {
+            font-family: Proxima Nova Regular;
+            font-size: 18px;
+            font-weight: normal;
+            font-stretch: normal;
+            font-style: normal;
+            line-height: 1;
+            letter-spacing: normal;
+            color: #ffffff;
+        }
+    }
+}
