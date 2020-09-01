@@ -22,8 +22,8 @@ export const fetchData = () =>
                 });
             });
 
-            Promise.all(arrayPromises).then(result => {
-                console.log(result);
+            Promise.all(arrayPromises).then(result => 
+            {
                 dispatch({type: FETCH_DATA, payload: result});
             });
         });
@@ -36,3 +36,17 @@ export const chooseShip = (ship) => {
         payload: ship
     }
 }
+
+// export const chooseFirstShip = (ship) => {
+//     return {
+//         type: CHOOSE_FIRST_SHIP,
+//         payload: ship
+//     }
+// }
+
+// export const chooseSecondShip = (ship) => {
+//     return {
+//         type: CHOOSE_SECOND_SHIP,
+//         payload: ship
+//     }
+// }

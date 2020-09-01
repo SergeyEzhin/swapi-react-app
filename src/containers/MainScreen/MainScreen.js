@@ -15,11 +15,13 @@ class MainScreen extends React.Component
 
     render()
     {
-        let {data, keysSelects} = this.props;
+        let {data, keysSelects, selectedShips} = this.props;
 
         if(data.length)
         {
-            console.log(data);
+            // console.log(selectedShips);
+            let parameters = Object.keys(data[0]);
+            // console.log(parameters);
             return (
                 <div className="container">
                     <div className="title">
@@ -48,7 +50,9 @@ class MainScreen extends React.Component
                         </div>
                     </div>
                     <div className="result-compare container-inner">
-                        <TableResult />
+                        {
+                            Object.keys(selectedShips).length === 0 ? null : <TableResult ships={selectedShips} parameters={parameters} />
+                        }
                     </div>
                 </div>
             )
@@ -66,7 +70,8 @@ const mapDispatchToProps = dispatch => ({
 
 const mapStateToProps = state => ({
    data: state.data.data,
-   keysSelects: state.data.keysSelects
+   keysSelects: state.data.keysSelects,
+   selectedShips: state.data.selectedShips
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(MainScreen);
